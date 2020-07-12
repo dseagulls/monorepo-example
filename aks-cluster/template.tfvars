@@ -1,0 +1,6 @@
+subscription_id = ""
+client_id = ""
+client_secret = ""
+tenant_id = ""
+client_application_name = ""
+server_application_name = ""
