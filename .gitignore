@@ -13,6 +13,9 @@ local.tfvars
 config_local.yml
 config_default.yml
 
+# Config sh
+config_local.sh
+
 # Crash log files
 crash.log
 
