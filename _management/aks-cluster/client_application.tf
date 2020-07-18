@@ -1,5 +1,5 @@
 resource "azuread_application" "client" {
-  name       = "var.client_application_name
+  name       = var.client_application_name
   reply_urls = ["http://k8s_client"]
   type       = "native"
 
