@@ -1,7 +1,5 @@
 FROM python:3.8-slim-buster
 
-MAINTAINER Andrew Dunn
-
 ENV KUBE_LATEST_VERSION="v1.18.3"
 ENV HELM_VERSION="v3.2.4"
 
