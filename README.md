@@ -3,7 +3,7 @@ This repo is to demonstrate the entire CI/CD pipeline & infrastructure for a mic
 
 This project has 3 goals.
 
-1. The only dependency build this project is docker
+1. The only dependency to build this project is docker
     - Testing, Building, Deploying should be done in containers that can be run anywhere
 2. Where possible, stay agnostic from tools
     - Example: Use Jenkins to run containers that build verses building directly in Jenkins
@@ -17,12 +17,12 @@ This repo will follow a defined structure, services should exist in the root and
     .
     ├── _management             # Anything not directly related to a service
     │   ├── aks-cluster         # Terraform to create AKS cluster
-    │   │   ├── definition.yml  # Definition file to specify what this folder is terraform files
+    │   │   ├── definition.yml  # Definition file to specify that this folder is terraform files
     │   ├── nginx-ingress       # Helm chart to deploy an nginx ingress
     │   ├── helm-deploy         # Dockerfile to create image to deploy helm charts
     │   └── README.md               
     ├── ServiceA                # Folder containing everything related to `ServiceA`
-    │   ├── definition.yml      # Definition file to specify what this folder is a dockerfile
+    │   ├── definition.yml      # Definition file to specify that this folder is a dockerfile
     ├── ServiceB                # Folder containing everything related to `ServiceB`
     └── README.md
 
@@ -35,28 +35,3 @@ Current technology used in this project is
 1. Docker
 2. Terraform
 3. AKS (Azure Kubernetes Service)
-
-
-## ToDo
-
-Everything below here has no been implemented yet
-
-### Definition Files
-
-A definition YAML file will reside in each folder to define what the folder contains.
-
-The original purpose of this is to be used by Jenkins to know how to build a folder
-
-Ex.
-
-``
-name: "Helm-Deploy"
-type: docker
-``
-
-or
-
-``
-name: "Helm-Deploy"
-type: helm
-``
