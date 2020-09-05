@@ -4,14 +4,6 @@ name: default
 
 steps:
 - name: test
-  image: docker:dind
-  volumes:
-  - name: dockersock
-    path: /var/run/docker.sock
+  image: python:3.7.9-stretch
   commands:
-  - docker ps -a
-
-volumes:
-- name: dockersock
-  host:
-    path: /var/run/docker.sock
+  - echo hello
