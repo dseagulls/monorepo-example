@@ -6,7 +6,12 @@ steps:
 - name: ServiceA
   image: python:3.7.9-stretch
   commands:
-  - git diff --name-only ${DRONE_COMMIT_BEFORE}..${DRONE_COMMIT_SHA}
+  - export FILES_CHANGED=$(git diff --name-only ${DRONE_COMMIT_BEFORE}..${DRONE_COMMIT_SHA})
+- name: ServiceA
+  image: python:3.7.9-stretch
+  commands:
+  - echo FILES_CHANGED
+  - echo ${FILES_CHANGED}
 trigger:
   event:
   - push
