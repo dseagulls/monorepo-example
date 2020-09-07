@@ -8,6 +8,6 @@ steps:
   commands:
   - git diff --name-only origin/main
   - echo after
-  - ${DRONE_COMMIT_AFTER}
+  - echo "${DRONE_COMMIT_AFTER}"
   - echo before
-  - ${DRONE_COMMIT_BEFORE}
+  - echo "${DRONE_COMMIT_BEFORE}"
