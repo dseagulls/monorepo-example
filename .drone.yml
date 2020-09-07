@@ -3,11 +3,11 @@ kind: pipeline
 name: default
 
 steps:
-- name: ServiceA
+- name: DetectChangedFolders
   image: python:3.7.9-stretch
   commands:
-  - export FILES_CHANGED=$(git diff --name-only ${DRONE_COMMIT_BEFORE}..${DRONE_COMMIT_SHA})
-- name: ServiceA
+  - export FILES_CHANGED=$(git diff --dirstat=files,0 --name-only ${DRONE_COMMIT_BEFORE}..${DRONE_COMMIT_SHA})
+- name: DisplayChangedFolders
   image: python:3.7.9-stretch
   commands:
   - echo FILES_CHANGED
