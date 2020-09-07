@@ -3,10 +3,11 @@ kind: pipeline
 name: default
 
 steps:
-- name: test
+- name: ServiceA
   image: python:3.7.9-stretch
   commands:
-  - echo "Changes to serviceb"
-  when:
-    changeset:
-      includes: [ ServiceA/** ]
+  - git diff --name-only origin/main
+  - echo after
+  - ${DRONE_COMMIT_AFTER}
+  - echo before
+  - ${DRONE_COMMIT_BEFORE}
