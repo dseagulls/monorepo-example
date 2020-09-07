@@ -5,3 +5,4 @@ images:
 packages:
     - name: ServiceA
       path: /service
+      
