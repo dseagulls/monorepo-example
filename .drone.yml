@@ -6,7 +6,7 @@ steps:
 - name: DetectChangedFolders
   image: python:3.7.9-stretch
   commands:
-  - FILES_CHANGED=$(git diff --dirstat=files,0 --name-only ${DRONE_COMMIT_BEFORE}..${DRONE_COMMIT_SHA})
+  - FILES_CHANGED=$(git diff --name-only ${DRONE_COMMIT_BEFORE}..${DRONE_COMMIT_SHA} -- . ':(exclude).*' | xargs dirname | uniq)
 - name: DisplayChangedFolders
   image: python:3.7.9-stretch
   commands:
