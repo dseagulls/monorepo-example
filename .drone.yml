@@ -9,4 +9,4 @@ steps:
   - echo "Changes to serviceb"
   when:
     changeset:
-      includes: [ /ServiceB/** ]
+      includes: [ ServiceA/** ]
