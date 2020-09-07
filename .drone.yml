@@ -6,11 +6,6 @@ steps:
 - name: ServiceA
   image: python:3.7.9-stretch
   commands:
-  - export 
-  - echo after
-  - echo "${DRONE_COMMIT_SHA}"
-  - echo before
-  - echo "${DRONE_COMMIT_BEFORE}"
   - git diff --name-only ${DRONE_COMMIT_BEFORE}..${DRONE_COMMIT_SHA}
 trigger:
   event:
