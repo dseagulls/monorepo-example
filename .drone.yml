@@ -6,4 +6,7 @@ steps:
 - name: test
   image: python:3.7.9-stretch
   commands:
-  - echo "testsss"
+  - echo "Changes to serviceb"
+  when:
+    changeset:
+      includes: [ /ServiceB/** ]
