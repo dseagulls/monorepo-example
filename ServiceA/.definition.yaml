@@ -1,0 +1,7 @@
+name: ServiceA
+images: 
+    - name: test
+      path: /service/Dockerfile
+packages:
+    - name: ServiceA
+      path: /service
